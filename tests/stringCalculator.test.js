@@ -24,8 +24,10 @@ test("handles new lines as delimiters", () => {
     expect(() => add("1,-2,3")).toThrow("negative numbers not allowed -2");
   });
   
-
   test("supports custom delimiters", () => {
     expect(add("//;\n1;2")).toBe(3);
   });
   
+  test("", () => {
+    expect(() => add("1,2,a,b,5")).toThrow("Invalid input a,b");
+  });
